@@ -3,7 +3,7 @@
 export default defineNuxtConfig({
     devtools: {enabled: true},
     extends: ['@nuxt/ui-pro'],
-    modules: ['@nuxt/ui', "@nuxtjs/tailwindcss"],
+    modules: ['@nuxt/ui', "@nuxtjs/tailwindcss", '@nuxthq/studio'],
     ui: {
         icons: ['mdi', 'simple-icons', 'heroicons'],
         // @ts-ignore
