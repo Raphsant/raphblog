@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import type {NavItem} from '@nuxt/content/dist/runtime/types'
+
+const navigation = inject<Ref<NavItem[]>>('navigation')
 const links = [{
   label: 'Home',
+  //@ts-ignore
   icon: 'i-heroicons-book-open',
   to: '/'
 }, {
@@ -24,9 +28,10 @@ const links = [{
       Raph<span class="text-primary">Sant</span>
     </template>
     <template #right>
-      <UColorModeButton />
+      <UColorModeButton/>
 
-      <UButton to="https://github.com/nuxt/ui" target="_blank" icon="i-simple-icons-github" color="gray" variant="ghost" />
+      <UButton to="https://github.com/nuxt/ui" target="_blank" icon="i-simple-icons-github" color="gray"
+               variant="ghost"/>
     </template>
     <template #panel>
       <UNavigationTree :links="links"/>
@@ -34,7 +39,17 @@ const links = [{
   </UHeader>
 
   <UMain>
-<slot/>
+    <UContainer>
+      <UPage>
+        <template #left>
+          <UAside>
+            <UNavigationTree :links="mapContentNavigation(navigation)"/>
+          </UAside>
+        </template>
+
+        <slot/>
+      </UPage>
+    </UContainer>
   </UMain>
 
   <UFooter>
@@ -43,7 +58,3 @@ const links = [{
     </template>
   </UFooter>
 </template>
-
-<style scoped>
-
-</style>

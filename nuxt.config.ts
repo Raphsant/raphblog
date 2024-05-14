@@ -3,7 +3,7 @@
 export default defineNuxtConfig({
     devtools: {enabled: true},
     extends: ['@nuxt/ui-pro'],
-    modules: ['@nuxt/ui', "@nuxtjs/tailwindcss", '@nuxthq/studio',  '@nuxt/content'],
+    modules: ['@nuxt/content', '@nuxt/ui', "@nuxtjs/tailwindcss", '@nuxthq/studio', '@vueuse/nuxt'],
     ui: {
         icons: ['mdi', 'simple-icons', 'heroicons'],
         // @ts-ignore
@@ -23,5 +23,19 @@ export default defineNuxtConfig({
         gray: 'cool',
 
 
+    },
+    router: {
+        scrollBehavior(to, from, savedPosition) {
+            if (savedPosition) {
+                return savedPosition;
+            } else if (to.hash) {
+                return {
+                    el: to.hash,
+                    behavior: 'smooth',
+                };
+            } else {
+                return {top: 0};
+            }
+        }
     }
 })
