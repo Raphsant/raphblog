@@ -3,8 +3,13 @@
 </script>
 
 <template>
-  <ULandingHero title="Raph Santana" description="Full stack developer specialized in making web apps in Nuxt"
-                :links="[{ label: 'My Github', icon: 'i-simple-icons-github', color: 'gray', size: 'lg', to: 'https://github.com/raphsant' }, {label: 'My Projects', icon: 'i-heroicons-computer-desktop', to: '/#projects'} , {label: 'My Blog', icon: 'i-heroicons-chat-bubble-left', to: '/blog'},{label: 'My services', icon: 'i-heroicons-currency-dollar', to: '/services'}]">
+  <ULandingHero description="Full stack developer specialized in making web apps in Nuxt"
+                :links="[{ label: 'My Github', icon: 'i-simple-icons-github', color: 'gray', size: 'lg', to: 'https://github.com/raphsant', target: '_blank' }, {label: 'My Projects', icon: 'i-heroicons-computer-desktop', to: '/#projects'} , {label: 'My Blog', icon: 'i-heroicons-chat-bubble-left', to: '/blog'},{label: 'My services', icon: 'i-heroicons-currency-dollar', to: '/services'}]">
+    <template #title>
+     <div class="justify-center items-center flex">
+       <img class="w-1/3 text-center" src="/img/logo.webp" alt="">
+     </div>
+    </template>
   </ULandingHero>
   <UContainer class="space-y-6">
     <ULandingCard>

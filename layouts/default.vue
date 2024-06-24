@@ -21,12 +21,12 @@ const links = [{
 <template>
   <UHeader>
     <template #logo>
-      Raph<span class="text-primary">Sant</span>
+      <img class="w-1/12" src="/img/logonav.webp">
     </template>
     <template #right>
       <UColorModeButton />
 
-      <UButton to="https://github.com/nuxt/ui" target="_blank" icon="i-simple-icons-github" color="gray" variant="ghost" />
+      <UButton to="https://github.com/Raphsant" target="_blank" icon="i-simple-icons-github" color="gray" variant="ghost" />
     </template>
     <template #panel>
       <UNavigationTree :links="links"/>
